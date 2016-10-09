@@ -1,0 +1,10 @@
+body{
+    background: url(meri.jpg) center center fixed;
+    background-size: 100%;
+}
+#taevas{
+    background: url(taevas.jpg) center center fixed;
+    width: 100%;
+    height: 200px;
+    
+}

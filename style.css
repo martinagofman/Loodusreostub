@@ -19,10 +19,11 @@ html, body {
     height: 68%; 
     background: url(pildid/meri.jpg) center center fixed;
     background-size: 100%;
+    position: absolute;
 }
 .kala{
     display: inline-block;
-    position: relative;
+    position: absolute;
     width: 20%; /*'siit muudad kõikide kalade suurusi korraga*/
     border: 1px solid red; /*Võtad komentaari ära ja kala on raamitud*/
 }
@@ -47,8 +48,8 @@ html, body {
     top: 80px;
 }
 #kammeljas{
-    left: 50px;
-    top: 20px;
+    left: 550px;
+    top: 200px;
 }
 /* --Kalad id'ga lõpp-- */
 

@@ -42,9 +42,13 @@ html, body {
 }
 
 /* --Kalad id'ga-- */
-#lohe{
+#forell{
     left: 10px;
-    top: 10px;
+    top: 80px;
+}
+#kammeljas{
+    left: 50px;
+    top: 20px;
 }
 /* --Kalad id'ga lõpp-- */
 

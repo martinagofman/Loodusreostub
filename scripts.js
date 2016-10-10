@@ -9,12 +9,13 @@ $(function () {
     /*tapaKala funktsioon vahetab kalale klikkides tema pildi ja lisab talle klassi, mis teeb ta nähtavaks*/
     function tapaKala(kalaId, kalaKorjus) {
         $(kalaId).click(function () {
-            $(kalaId.concat(' > img')).attr('src', 'pildid/kalad/'.concat(kalaKorjus));
-            $(this).addClass('surnud');
+            $(kalaId.concat(' > img')).attr('src', 'pildid/kalad/'.concat(kalaKorjus)); /*muudab pildi*/
+            $(this).addClass('surnud'); /*lisab klassi*/
         });
     }
     
-    tapaKala('#lohe', 'surnud_forell.png');
-    //tapaKala('kala ID', 'surnud_kala_pilt');
+    tapaKala('#forell', 'surnud_forell.png');
+    tapaKala('#kammeljas', 'surnud_forell.png');
+    /*tapaKala('#kammeljas', 'surnud_forell.png');*/
 
 });

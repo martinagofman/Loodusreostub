@@ -1,10 +1,50 @@
-body{
-    background: url(meri.jpg) center center fixed;
+html, body { 
+    margin: 0; 
+    padding: 0; 
+    width: 100%; 
+    height: 100%;
+}
+.pakend { 
+    width: 100%; 
+    height: 100%; 
+    top: 0px;
+}
+.taevas { 
+    background: url(pildid/taevas.jpg) center center fixed;
+    width: 100%; 
+    height: 32%; 
+}
+.meri { 
+    width: 100%; 
+    height: 68%; 
+    background: url(pildid/meri.jpg) center center fixed;
     background-size: 100%;
 }
-#taevas{
-    background: url(taevas.jpg) center center fixed;
-    width: 100%;
-    height: 200px;
-    
+.kala{
+    display: inline-block;
+    position: relative;
+    width: 20%; /*'siit muudad kõikide kalade suurusi korraga*/
+    border: 1px solid red; /*Võtad komentaari ära ja kala on raamitud*/
 }
+.kala > img{
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    height: auto;
+    visibility: hidden;
+}
+.kala:hover > img{
+    visibility: visible;
+}
+/*js'i klass*/
+.kala.surnud > img{
+    visibility: visible;
+}
+
+/* --Kalad id'ga-- */
+#lohe{
+    left: 10px;
+    top: 10px;
+}
+/* --Kalad id'ga lõpp-- */
+

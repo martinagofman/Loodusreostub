@@ -1,33 +1,48 @@
 <!DOCTYPE html>
 <html lang="ET">
+
 <head>
-    <meta charset="UTF-8"> <!-- mis tähestik -->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- seadme laius, 1.0 tava suurus -->
-    <meta name="description" content="Looduse reostumine"> <!-- lehe kirjeldus -->
-    <meta name="author" content="Martina Gofman"> <!-- autor -->
-    <title>PEALKIRI</title> <!-- tabi pealkiri -->
-    <link rel="shortcut icon" href="merireostub.jpg"> <!-- favicon -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.4/css/bootstrap.min.css"> <!-- lisaraamistik lehe arendamiseks (css) -->
+    <meta charset="UTF-8">
+    <!-- mis tähestik -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- seadme laius, 1.0 tava suurus -->
+    <meta name="description" content="Looduse reostumine">
+    <!-- lehe kirjeldus -->
+    <meta name="author" content="Martina Gofman">
+    <!-- autor -->
+    <title>Loodusreostub</title>
+    <!-- tabi pealkiri -->
+    <link rel="shortcut icon" href="merireostub.jpg">
+    <!-- favicon -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.4/css/bootstrap.min.css">
+    <!-- lisaraamistik lehe arendamiseks (css) -->
     <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.4/css/bootstrap-theme.min.css"> -->
     <link rel="stylesheet" href="style.css">
-   
+
     <!-- lisaraamistiku stiilid IE jaoks -->
     <!--[if IE]>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.min.js"></script>
+        <![endif]-->
 </head>
 
 <body>
-    
-    <!-- taevas on id, seda kasutatakse 1 kord 1 html'i faili jooksul -->
-     <div id="taevas"> 
-         <!-- <h1>Hello, world!</h1> --> <!-- tavaline tekst käib paragrahvidena, h on pealkiri -->
-        
+   
+    <div class="pakend">
+        <div class="taevas">Taevas</div>
+        <div class="meri">
+            <div id="lohe" class="kala">
+                <img src="pildid/kalad/forell.png" alt="forell">
+            </div>
+        </div>
     </div>
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script> <!-- lisaraamistik lehe arendamiseks (jquery, võimaldab bootstrap.js'l töötada) -->
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.4/js/bootstrap.min.js"></script> <!-- lisaraamistik lehe arendamiseks (bootstrap.js) -->
+    <!-- Scriptid -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <!-- lisaraamistik lehe arendamiseks (jquery, võimaldab bootstrap.js'l töötada) -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.4/js/bootstrap.min.js"></script>
+    <!-- lisaraamistik lehe arendamiseks (bootstrap.js) -->
     <script src="scripts.js"></script>
 </body>
+
 </html>

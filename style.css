@@ -25,8 +25,14 @@ body {
     background: url(pildid/meri.jpg) center center fixed;
     background-size: 100%;
     position: absolute;
+    overflow: hidden;
     z-index: 2;
     /*Toob mere pilvedest ette*/
+}
+
+.prugi,
+.toss {
+    position: absolute;
 }
 
 .kala {
@@ -35,6 +41,7 @@ body {
     width: 20%;
     /*'siit muudad kõikide kalade suurusi korraga*/
     //border: 1px solid red; /*Võtad komentaari ära ja kala on raamitud*/
+    z-index: 100 !important;
 }
 
 .kala > img {

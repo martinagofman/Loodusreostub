@@ -23,7 +23,7 @@ $(function () {
 
     function mang(piirang) {
         if (prugiKogus >= piirang) {
-            alert("LOODUS REOSTUB!");
+            alert("Loodus reostub");
         }
     }
 
@@ -33,7 +33,7 @@ $(function () {
                 var top = e.pageY - $(".taevas").height() - pikkus / 2,
                     left = e.pageX - laius / 2;
 
-                $(this).append("<img class='prugi' src='pildid/prugi.png' alt='prügi' style='left:" + left + "px; top: " + top + "px; width: " + laius + "px; height: " + pikkus + "px' />");
+                $(this).append("<img class='prugi' src='pildid/prygi/prygikott.png' alt='prügi' style='left:" + left + "px; top: " + top + "px; width: " + laius + "px; height: " + pikkus + "px' />");
                 prugiLoendur();
                 mang(5);
             }
@@ -46,7 +46,7 @@ $(function () {
                 var top = e.pageY - pikkus / 2,
                     left = e.pageX - laius / 2;
 
-                $(this).append("<img class='toss' src='pildid/toss.png' alt='toss' style='left:" + left + "px; top: " + top + "px; width: " + laius + "px; height: " + pikkus + "px' />");
+                $(this).append("<img class='toss' src='pildid/toss/toss.png' alt='toss' style='left:" + left + "px; top: " + top + "px; width: " + laius + "px; height: " + pikkus + "px' />");
 
             }
         });
@@ -70,10 +70,15 @@ $(function () {
     siduja(".taevas");
 
     tapaKala('#forell', 'surnud_forell.png');
-    tapaKala('#kammeljas', 'surnud_forell.png');
+    tapaKala('#kammeljas', 'surnud_kammeljas.png');
+    tapaKala('#saga', 'surnud_saga.png');
+    tapaKala('#lohe2', 'surnud_lohe2.png');
+    tapaKala('#lohe', 'surnud_lohe.png');
+    tapaKala('#tinkatinka', 'surnud_tinkatinka.png');
+    tapaKala('#angerjas', 'surnud_angerjas.png');
     /*tapaKala('#kammeljas', 'surnud_forell.png');*/
 
-    prugi(100, 100);
-    toss(100, 100);
+    prugi(270, 270);
+    toss(450, 300);
 
 });

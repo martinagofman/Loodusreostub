@@ -29,7 +29,7 @@ $(function () {
         $(lindId).click(function () {
             $(this).attr('src', 'pildid/linnud/'.concat(lindKorjus)); /*muudab pildi*/
             $(this).addClass('surnud'); /*lisab klassi*/
-            
+
             setTimeout(function () {
                 $(lindId).addClass('img-surnud');
             }, 100);
@@ -43,28 +43,26 @@ $(function () {
         }
     }
 
-    function scrollerDown() {
-        scroll = scroll + 300;
+    function scrollCheck() {
         if (scroll < 0) {
             scroll = 0;
+        } else if (scroll > 15000) {
+            scroll = 15000;
         }
-        $(".taevas").scrollTop(scroll);
-    }
-
-    function scrollerUp() {
-        scroll = scroll - 300;
-        if (scroll < 0) {
-            scroll = 0;
-        }
-        $(".taevas").scrollTop(scroll);
     }
 
     function scrollImportant() {
-        $(window).bind('mousewheel DOMMouseScroll', function (event) {
+        $(document).bind('mousewheel DOMMouseScroll', function (event) {
             if (event.originalEvent.wheelDelta > 0 || event.originalEvent.detail < 0) {
-                scrollerUp();
+                console.log(scroll);
+                scroll = scroll - event.originalEvent.wheelDelta;
+                scrollCheck();
+                $(".taevas").scrollTop(scroll);
             } else {
-                scrollerDown();
+                console.log(scroll);
+                scroll = scroll - event.originalEvent.wheelDelta;
+                scrollCheck();
+                $(".taevas").scrollTop(scroll);
             }
         });
     }
@@ -126,10 +124,11 @@ $(function () {
 
     /*parallaxScroll funktsioonis teostatakse kihtide liigutamine erinevatel kiirustel*/
     function parallaxScroll(scrollitavElement) {
-        var scrolled = $(scrollitavElement).scrollTop();
-        $('#linnud1').css('top', (Number(0) - (scrolled * 0.25)) + 'px');
-        $('#linnud2').css('top', (Number(0) - (scrolled * 0.5)) + 'px');
-        $('#linnud3').css('top', (Number(0) - (scrolled * 0.75)) + 'px');
+        scroll = $(scrollitavElement).scrollTop();
+        console.log(scroll);
+        $('#linnud1').css('top', (Number(0) - (scroll * 0.25)) + 'px');
+        $('#linnud2').css('top', (Number(0) - (scroll * 0.5)) + 'px');
+        $('#linnud3').css('top', (Number(0) - (scroll * 0.75)) + 'px');
     }
 
     /*Element seotakse 'scroll' eventiga, kus teostatakse parallaxScroll()*/
@@ -140,17 +139,17 @@ $(function () {
     }
 
 
-    //scrollImportant();
+    scrollImportant();
     siduja(".taevas");
 
-    tapaLind('[id^=albatross]', 'surnudalbatross.png');
-    tapaLind('[id^=albatross2]', 'surnudalbatross2.png');
-    tapaLind('[id^=kajakas]', 'surnudkajakas.png');
-    tapaLind('[id^=kajakas2]', 'surnudkajakas2.png');
-    tapaLind('[id^=hahk]', 'surnudhahk.png');
-    tapaLind('[id^=hahk2]', 'surnudhahk2.png');
-    tapaLind('[id^=part]', 'surnudpart.png');
-    tapaLind('[id^=part2]', 'surnudpart2.png');
+    tapaLind('[id^=albatross-]', 'surnudalbatross.png');
+    tapaLind('[id^=albatross2-]', 'surnudalbatross2.png');
+    tapaLind('[id^=kajakas-]', 'surnudkajakas.png');
+    tapaLind('[id^=kajakas2-]', 'surnudkajakas2.png');
+    tapaLind('[id^=hahk-]', 'surnudhahk.png');
+    tapaLind('[id^=hahk2-]', 'surnudhahk2.png');
+    tapaLind('[id^=part-]', 'surnudpart.png');
+    tapaLind('[id^=part2-]', 'surnudpart2.png');
 
     tapaKala('#forell', 'surnud_forell.png');
     tapaKala('#kammeljas', 'surnud_kammeljas.png');
@@ -162,6 +161,6 @@ $(function () {
     /*tapaKala('#kammeljas', 'surnud_forell.png');*/
 
     prugi(200);
-    toss(200);
+    toss(300);
 
 });

@@ -10,8 +10,8 @@ $(function () {
         prugiArrayCounter = 0,
         tossArrayCounter = 0,
         scroll = 0,
-        prygiArray = ["prygikott.png", "prygikott2.png", "pepsi.png", "can1.png", "can2.png", "kilekott.png", "kilekott2.png"],
-        tossuArray = ["musttoss.png", "musttoss2.png", "toss.png", "toss1.png", "toss2.png", "toss3.png"];
+        prygiArray = ["prygikott2.png", "pepsi.png", "kilekott2.png", "prygikott.png", "can2.png", "can1.png", "kilekott.png"],
+        tossuArray = ["toss.png", "musttoss.png", "toss2.png", "musttoss2.png", "toss1.png", "toss3.png"];
 
     /*tapaKala funktsioon vahetab kalale klikkides tema pildi ja lisab talle klassi, mis teeb ta nähtavaks*/
     function tapaKala(kalaId, kalaKorjus) {
@@ -73,8 +73,8 @@ $(function () {
 
     function mang(piirang) {
         if (prugiKogus >= piirang) {
-            //alert("Loodus reostub");
-            $("#reostus").addClass("naita");
+            alert("Loodus reostub");
+            //$("#reostus").addClass("naita");
         }
     }
 
@@ -97,7 +97,7 @@ $(function () {
                 $(this).append("<img class='prugi' src='pildid/prygi/" + prygiArray[prugiArrayCounter] + "' alt='prügi' style='left:" + left + "px; top: " + top + "px; height: " + suurus + "px' />");
                 prugiArrayLoendur();
                 prugiLoendur();
-                mang(10);
+                mang(15);
             }
         });
     }
@@ -151,7 +151,7 @@ $(function () {
     }
 
 
-    scrollImportant(75);
+    scrollImportant(3);
     siduja(".taevas");
     reosta();
     testNaitaElem();
@@ -159,9 +159,9 @@ $(function () {
     tapaLind('[id^=albatross-]', 'surnudalbatross.png');
     tapaLind('[id^=albatross2-]', 'surnudalbatross2.png');
     tapaLind('[id^=kajakas-]', 'surnudkajakas.png');
-    tapaLind('[id^=kajakas2-]', 'surnudkajakas2.png');
+    tapaLind('[id^=kajakas2-]', 'surnudkajakas.png');
     tapaLind('[id^=hahk-]', 'surnudhahk.png');
-    tapaLind('[id^=hahk2-]', 'surnudhahk2.png');
+    tapaLind('[id^=hahk2-]', 'surnudhahk.png');
     tapaLind('[id^=part-]', 'surnudpart.png');
     tapaLind('[id^=part2-]', 'surnudpart2.png');
 

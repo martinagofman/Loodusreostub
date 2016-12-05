@@ -39,13 +39,15 @@ body {
 }
 
 #reostus .txt {
-    border: 3px solid red;
+    //border: 3px solid red;
     width: 300px;
     display: inline-block;
 }
 
 #reostus .txt p {
     margin: 0px;
+    font-family: cursive;
+    font-size: 30px;
 }
 
 
@@ -190,7 +192,7 @@ body {
 
 #hahk-2-3 {
     position: absolute;
-    top: 500px;
+    top: 400px;
     left: -35px;
     width: 50%;
 }
@@ -225,7 +227,7 @@ body {
 
 #hahk2-2-8 {
     position: absolute;
-    top: 5700px;
+    top: 5600px;
     left: 400px;
     width: 70%;
 }
@@ -299,7 +301,7 @@ body {
 
 #hahk-1-5 {
     position: absolute;
-    top: 1600px;
+    top: 1500px;
     left: 40px;
     width: 30%;
 }

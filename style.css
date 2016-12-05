@@ -35,6 +35,7 @@ body {
 .prugi,
 .toss {
     position: absolute;
+    z-index: 100;
 }
 
 .kala {

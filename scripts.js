@@ -18,6 +18,10 @@ $(function () {
         $(kalaId).click(function () {
             $(kalaId.concat(' > img')).attr('src', 'pildid/kalad/'.concat(kalaKorjus)); /*muudab pildi*/
             $(this).addClass('surnud'); /*lisab klassi*/
+
+            setTimeout(function () {
+                $(kalaId + " img").addClass('img-surnud');
+            }, 100);
         });
     }
 
@@ -25,6 +29,10 @@ $(function () {
         $(lindId).click(function () {
             $(this).attr('src', 'pildid/linnud/'.concat(lindKorjus)); /*muudab pildi*/
             $(this).addClass('surnud'); /*lisab klassi*/
+            
+            setTimeout(function () {
+                $(lindId).addClass('img-surnud');
+            }, 100);
         });
     }
 
@@ -72,16 +80,25 @@ $(function () {
         }
     }
 
-    function prugi(laius, pikkus) {
-        $(".meri").click(function (e) {
-            if (e.target.className === "meri") {
-                var top = e.pageY - $(".taevas").height() - pikkus / 2,
-                    left = e.pageX - laius / 2;
+    $('body').click(function (e) {
 
-                $(this).append("<img class='prugi' src='pildid/prygi/" + prygiArray[prugiArrayCounter] + "' alt='prügi' style='left:" + left + "px; top: " + top + "px; width: " + laius + "px; height: " + pikkus + "px' />");
+        var target = $(e.target),
+            article;
+
+        console.log(e.target.className);
+
+    });
+
+    function prugi(suurus) {
+        $(".meri").click(function (e) {
+            if (e.target.className === "meri" || e.target.className === "img-surnud" || e.target.className === "prugi") {
+                var top = e.pageY - $(".taevas").height() - suurus / 2,
+                    left = e.pageX - suurus / 2;
+                //width: " + laius + "px;
+                $(this).append("<img class='prugi' src='pildid/prygi/" + prygiArray[prugiArrayCounter] + "' alt='prügi' style='left:" + left + "px; top: " + top + "px; height: " + suurus + "px' />");
                 prugiArrayLoendur();
                 prugiLoendur();
-                mang(10);
+                mang(20);
             }
         });
     }
@@ -93,16 +110,16 @@ $(function () {
         }
     }
 
-    function toss(laius, pikkus) {
+    function toss(suurus) {
         $(".taevas #wrapper").click(function (e) {
-            if (e.target.id === "wrapper") {
-                var top = e.pageY - pikkus / 2,
-                    left = e.pageX - laius / 2;
-
-                $(this).append("<img class='toss' src='pildid/toss/" + tossuArray[tossArrayCounter] + "' alt='toss' style='left:" + left + "px; top: " + top + "px; width: " + laius + "px; height: " + pikkus + "px' />");
+            if (e.target.id === "wrapper" || e.target.className === "toss" || e.target.className === "surnud img-surnud") {
+                var top = e.pageY - suurus / 2,
+                    left = e.pageX - suurus / 2;
+                //width: " + laius + "px;
+                $(this).append("<img class='toss' src='pildid/toss/" + tossuArray[tossArrayCounter] + "' alt='toss' style='left:" + left + "px; top: " + top + "px; height: " + suurus + "px' />");
                 tossArrayLoendur();
                 prugiLoendur();
-                mang(10);
+                mang(20);
             }
         });
     }
@@ -122,8 +139,8 @@ $(function () {
         });
     }
 
-    
-    scrollImportant();
+
+    //scrollImportant();
     siduja(".taevas");
 
     tapaLind('[id^=albatross]', 'surnudalbatross.png');
@@ -144,7 +161,7 @@ $(function () {
     tapaKala('#angerjas', 'surnud_angerjas.png');
     /*tapaKala('#kammeljas', 'surnud_forell.png');*/
 
-    prugi(200, 270);
-    toss(450, 300);
+    prugi(200);
+    toss(200);
 
 });
